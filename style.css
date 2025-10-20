@@ -1,0 +1,254 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth; /* Smooth scroll effect */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f9;
+}
+
+/* --- Header & Navigation --- */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #007bff; /* Primary Color */
+    text-decoration: none;
+}
+
+.navbar a {
+    font-size: 1rem;
+    color: #333;
+    text-decoration: none;
+    margin-left: 2.5rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: #007bff;
+    transform: translateY(-2px);
+}
+
+/* Hamburger menu icon (Hidden on desktop) */
+#menu-icon {
+    font-size: 1.5rem;
+    color: #333;
+    cursor: pointer;
+    display: none;
+}
+
+/* --- Utility Classes & Buttons --- */
+.section {
+    padding: 6rem 5% 4rem;
+    min-height: 100vh;
+    scroll-margin-top: 5rem; /* Adjusts for fixed header */
+}
+
+h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #1a1a1a;
+    animation: fadeInDown 1s ease-out; /* Simple animation */
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background: #007bff;
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+}
+
+.dark-bg {
+    background-color: #343a40;
+    color: white;
+}
+
+/* --- Hero Section --- */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(135deg, #e0f7fa 0%, #ffffff 100%);
+    padding-top: 5rem;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: #555;
+}
+
+/* --- Skills Section --- */
+.skills-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.skill-item {
+    background: #ffffff;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    font-weight: 600;
+    color: #007bff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-item:hover {
+    transform: translateY(-5px); /* Hover effect */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Projects Section --- */
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border-left: 5px solid #007bff;
+    transition: background-color 0.3s ease;
+}
+
+.project-card:hover {
+    background-color: #e6f0ff; /* Subtle hover effect */
+    transform: scale(1.02);
+}
+
+.project-card h3 {
+    margin-bottom: 0.5rem;
+    color: #007bff;
+}
+
+/* --- Contact Section --- */
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.contact-link {
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.contact-link i {
+    margin-right: 0.5rem;
+    color: #007bff;
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background: #343a40;
+    color: white;
+    font-size: 0.9rem;
+}
+
+/* --- Responsive Layout (Media Queries) --- */
+@media (max-width: 992px) {
+    .header {
+        padding: 1rem 4%;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Show the hamburger icon */
+    #menu-icon {
+        display: block;
+    }
+
+    /* Hide the navigation bar by default */
+    .navbar {
+        position: absolute;
+        top: 100%; /* Position below the header */
+        left: 0;
+        width: 100%;
+        padding: 1rem 5%;
+        background: #fff;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        display: none; /* Hidden by default */
+        flex-direction: column;
+        text-align: center;
+        transition: 0.3s ease;
+    }
+
+    /* JavaScript will add this class to show the menu */
+    .navbar.active {
+        display: flex;
+    }
+
+    .navbar a {
+        display: block;
+        margin: 0.5rem 0;
+        font-size: 1.1rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+}
+
+/* --- Keyframe Animation for H2 --- */
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
